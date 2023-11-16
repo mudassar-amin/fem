@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "F:/Course/fem/eigen/test/dontalign.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "dontalign_4"
+	}
+}

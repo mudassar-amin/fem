@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "F:/Course/fem/eigen/test/tuple_test.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "tuple_test"
+	}
+}

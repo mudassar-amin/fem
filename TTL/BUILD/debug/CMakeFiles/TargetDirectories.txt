@@ -1,0 +1,9 @@
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/ttl.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/main.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/package.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/package_source.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/edit_cache.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/rebuild_cache.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/list_install_components.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/install.dir
+F:/Course/fem/TTL/BUILD/debug/CMakeFiles/install/local.dir

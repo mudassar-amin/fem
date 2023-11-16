@@ -1,0 +1,36 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw64/bin/ninja.exe cmTC_b58c3 && [1/2] Building CXX object CMakeFiles/cmTC_b58c3.dir/src.cxx.obj
+FAILED: CMakeFiles/cmTC_b58c3.dir/src.cxx.obj 
+C:\mingw64\bin\g++.exe -DCOMPILER_SUPPORT_Wshorten64to32  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror   -Wshorten-64-to-32 -std=c++14 -o CMakeFiles/cmTC_b58c3.dir/src.cxx.obj -c F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp/src.cxx
+g++.exe: error: unrecognized command-line option '-Wshorten-64-to-32'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw64/bin/ninja.exe cmTC_a2a29 && [1/2] Building CXX object CMakeFiles/cmTC_a2a29.dir/src.cxx.obj
+FAILED: CMakeFiles/cmTC_a2a29.dir/src.cxx.obj 
+C:\mingw64\bin\g++.exe -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd981 -std=c++14 -o CMakeFiles/cmTC_a2a29.dir/src.cxx.obj -c F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp/src.cxx
+g++.exe: error: unrecognized command-line option '-wd981'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/mingw64/bin/ninja.exe cmTC_0dbbc && [1/2] Building CXX object CMakeFiles/cmTC_0dbbc.dir/src.cxx.obj
+FAILED: CMakeFiles/cmTC_0dbbc.dir/src.cxx.obj 
+C:\mingw64\bin\g++.exe -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd2304 -std=c++14 -o CMakeFiles/cmTC_0dbbc.dir/src.cxx.obj -c F:/Course/fem/BUILD/debug/CMakeFiles/CMakeTmp/src.cxx
+g++.exe: error: unrecognized command-line option '-wd2304'
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+int main() { return 0; }
