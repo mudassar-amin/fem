@@ -3,11 +3,14 @@
 #include <ttl/halfedge/HeTriang.h>
 #include <ttl/halfedge/HeDart.h>
 #include <ttl/halfedge/HeTraits.h>
+#define _USE_MATH_DEFINES
 #include <fstream>
 #include <iostream>
+#include <iomanip> // For std::setw
+
 #include <algorithm>
 #include <math.h>
-#define _USE_MATH_DEFINES
+
 
 using namespace std;
 using namespace hed;
@@ -258,24 +261,24 @@ public:
         VectorXd r = VectorXd::Zero(np); // initialization of the boundary vector r
         list<Dart>::iterator E;
         for (E = boundary.begin(); E != boundary.end(); ++E) { // loop over boundary edges
-            // extract nodes...
+
             Edge* edg = E->getEdge();
             Node* N1 = edg->getSourceNode();
             Node* N2 = edg->getTargetNode();
-            // ...and their global indices
+
             Vector2<Index> loc2glb = {N1->id(), N2->id()};
-            // extract coordinates of the nodes
+
             Vector2d x = {N1->x(), N2->x()};
             Vector2d y = {N1->y(), N2->y()};
-            // compute the length of the edge
+
             double len = sqrt((x(0) - x(1)) * (x(0) - x(1)) + (y(0) - y(1)) * (y(0) - y(1)));
-            // find edge centroid
+
             double xc = (x(0) + x(1)) / 2;
             double yc = (y(0) + y(1)) / 2;
-            double tmp = kappa(xc, yc) * gD(xc, yc) + gN(xc, yc); // compute the value of the boundary conditions
+            double tmp = kappa(xc, yc) * gD(xc, yc) + gN(xc, yc);
             Vector2d vec = {1, 1};
             Vector2d rE = tmp * vec * len / 2;
-            // add rE to the global boundary vector r
+
             for (int j = 0; j < 2; ++j) {
                 r(loc2glb(j)) += rE(j);
             }
@@ -284,7 +287,7 @@ public:
     }
 
 
-    //---------------------------SOLVER METHOD-------------------------------
+    //---------------------------SOLVE METHOD-------------------------------
 
 
     void solve() {
@@ -300,7 +303,7 @@ public:
         Eigen::SimplicialLDLT<Eigen::SparseMatrix<double>> solver;
         Eigen::VectorXd zeta; // Solution vector
 
-        // Assemble the stiffness matrix A and Robin matrix R common for all problems
+        // Assemble the stiffness matrix A and Robin matrix R
         A = stiffMat(trilist, np);
         R = RobinMat(boundary, np);
         b = loadVect(trilist, np);
@@ -311,7 +314,7 @@ public:
             zeta = solver.compute(A + R).solve(r);
 
         } else if (this->problemtype == "poisson") {
-            Eigen::VectorXd b = loadVect(trilist, np); // Assuming a source term f=1 is applied everywhere
+            Eigen::VectorXd b = loadVect(trilist, np);
             zeta = solver.compute(A + R).solve(r+b);
 
         } else if (this->problemtype == "helmholtz") {
@@ -319,13 +322,13 @@ public:
             double lambda = 81;
             M = massMat(trilist, np);
             Eigen::VectorXd r = RobinVect(boundary, np);
-            zeta = solver.compute(A + R - lambda * M).solve(r);
+            zeta = solver.compute(A + R - (lambda * M)).solve(r);
         } else {
             std::cerr << "Unknown problem type: " << this->problemtype << std::endl;
             return;
         }
 
-        cout<<zeta;
+        //cout<<zeta;
 
         // Update node values
         list<Node*>::iterator L;
@@ -345,23 +348,22 @@ public:
             }
 
             // Get a list of nodes and edges from the triangulation
-            auto nodelist = triang.getNodes(); // assuming this returns a list of nodes
-            auto trilist = triang.getLeadingEdges(); // assuming this returns a list of edges representing triangles
+            auto nodelist = triang.getNodes();
+            auto trilist = triang.getLeadingEdges();
             int np = nodes->size();
 
             // Save vertex positions in the OBJ file
             int normind = 1;
-            for (const auto& node : *nodelist) { // assuming the nodes are stored in a std::list or similar
+            for (const auto& node : *nodelist) {
                 objfile << "v " << node->x() << " " << node->z() <<  " " << node->y()<< "\n"; // Z-coordinate is set to 0 for 2D
-            }
+            }  //-uexact(node->x(), node->y())
 
-            // Since we are working with a 2D mesh, normals are not necessary
-            // If needed, all normals can point in the same direction (e.g., the positive Z direction)
-            objfile << "vn 0.0 0.0 1.0\n"; // One normal for all faces, pointing upwards
+
+            objfile << "vn 0.0 0.0 1.0\n";
 
             // Save faces
             for (const auto& edge : trilist) {
-                // Assuming each edge has a pointer to the next edge in the triangle (CCW order)
+
                 auto N1 = edge->getSourceNode();
                 auto N2 = edge->getTargetNode();
                 auto N3 = edge->getNextEdgeInFace()->getTargetNode();
@@ -379,6 +381,63 @@ public:
         }
 
 
+
+    double FEMobject::uexact(double x, double y){
+
+        if(this->problemtype == "laplace") {
+            double rho = sqrt((x * x) + (y * y));
+            double phi = atan2(y, x);
+            return pow(rho, 4) * cos(4 * phi);
+
+        } else if(this->problemtype == "poisson") {
+            return (1 - (x * x)) / 2.0;
+
+        }else if(this->problemtype == "helmholtz") {
+            const double lambda = 81.0;
+            const double sqrt_lambda = sqrt(lambda);
+            return (cos(sqrt_lambda * x) + tan(sqrt_lambda) * sin(sqrt_lambda * x))*0.25;
+
+        }
+        return 0; //default value
+    }
+
+    double FEMobject::getError(){
+        double error = 0;
+        list<Edge*>::iterator K;
+        //auto nodelist = triang.getNodes();
+        auto trilist = triang.getLeadingEdges();
+        // Assuming you have a collection of edges to iterate over
+        for (K = trilist.begin(); K != trilist.end(); K++) {
+        Edge* edge = *K;
+        Node* nodea = edge->getSourceNode();
+        Node* nodeb = edge->getTargetNode();
+        Node* nodec = edge->getNextEdgeInFace()->getTargetNode();
+        Eigen::Vector3d x = {nodea->x(), nodeb->x(), nodec->x()};
+        Eigen::Vector3d y = {nodea->y(), nodeb->y(), nodec->y()};
+        double area = triarea(nodea, nodeb, nodec);
+        double xc = (x(0) + x(1) + x(2)) / 3;
+        double yc = (y(0) + y(1) + y(2)) / 3;
+        double ubar = uexact(xc, yc);
+        double uhbar = (nodea->z() + nodeb->z() + nodec->z()) / 3;
+        double eK = (ubar - uhbar) * (ubar - uhbar) * area; // Corrected exponentiation
+        error += eK;
+        }
+
+        return sqrt(error);
+    }
+
+    int FEMobject::getDoFs(){
+
+       return this->triang.getNodes()->size(); // This is correct
+    }
+
+
+
+
+
+
+
+
 };
 
 
@@ -386,32 +445,62 @@ public:
 
 int main() {
 
-    int no_of_nodes =10;
+    int no_of_nodes =40;
 
     Eigen::Vector2d Op(0, 0)  ;
 
     FEMobject model;
 
-    //model.problemtype = "laplace";
-    model.problemtype = "poisson";
-    //model.problemtype = "helmholtz";
+    model.problemtype = "laplace";
+    //model.problemtype = "poisson";
+   // model.problemtype = "helmholtz";
 
 
-    //model.SquareMesh(no_of_nodes, 5, Op );
-    model.CircleMesh(10, no_of_nodes, 1);
+    //model.SquareMesh(no_of_nodes, 1, Op );
+    model.CircleMesh(20, no_of_nodes, 1);
     model.solve();
 
 
     //model.visualization("squarelaplace.obj");              //For Lappace
-    //model.visualization("circlelaplace.obj");
+    model.visualization("circlelaplace.obj");
 
 
     //model.visualization("squarepoisson.obj");              //For Poisson
-    model.visualization("circlepoisson.obj");
+    //model.visualization("circlepoisson.obj");
 
 
     //model.visualization("squarehelmholtz.obj");            // For helmholtz
     //model.visualization("circlehelmholtz.obj");
+
+
+
+
+
+
+    int numDoFs = model.getDoFs();
+        double error = model.getError();
+        std::string problemType = model.problemtype; // Ensure this is set correctly in FEMobject
+
+            // Print the header of the table
+            std::cout << std::left << std::setw(15) << "Problem Type"
+                      << std::setw(15) << "DoFs"
+                      << std::setw(15) << "Error" << std::endl;
+
+            // Print a line for the table
+            std::cout << std::setfill('-') << std::setw(45) << "" << std::endl;
+            std::cout << std::setfill(' '); // Reset the fill character
+
+            // Print the data in a tabular format
+            std::cout << std::left << std::setw(15) << model.problemtype
+                      << std::setw(15) << numDoFs
+                      << std::setw(15) << std::setprecision(5) << error << std::endl;
+
+
+
+
+
+
+
 
 
 
