@@ -437,12 +437,12 @@ int main() {
     FEMobject model;
 
     //model.problemtype = "laplace";
-    //model.problemtype = "poisson";
-    model.problemtype = "helmholtz";
+    model.problemtype = "poisson";
+    //model.problemtype = "helmholtz";
 
 
-    model.SquareMesh(no_of_nodes, 1, Op );
-    //model.CircleMesh(5, no_of_nodes, 1);
+    //model.SquareMesh(no_of_nodes, 1, Op );
+    model.CircleMesh(5, no_of_nodes, 1);
     model.solve();
 
 
@@ -451,10 +451,10 @@ int main() {
 
 
     //model.visualization("squarepoisson.obj");
-    //model.visualization("circlepoisson.obj");
+    model.visualization("circlepoisson.obj");
 
 
-    model.visualization("squarehelmholtz.obj");
+    //model.visualization("squarehelmholtz.obj");
     //model.visualization("circlehelmholtz.obj");
 
 
