@@ -58,15 +58,13 @@ public:
     void SquareMesh(int n, double d, Eigen::Vector2d Op) {
         for (int j = 0; j <= n; ++j) {
             for (int i = 0; i <= n; ++i) {
-                double x = Op(0) + i * d / n; // x-coordinate
-                double y = Op(1) + j * d / n; // y-coordinate
-                // Create a new node at the calculated position
+                double x = Op(0) + ((i * d) / n); // x-coordinate
+                double y = Op(1) + ((j * d) / n); // y-coordinate
                 hed::Node* p = new hed::Node(x, y);
                 // Add the new node to the nodes vector
                 nodes->push_back(p);
             }
         }
-        // Call Delaunay triangulation on all the nodes to create the mesh
         triang.createDelaunay(nodes->begin(), nodes->end());
     }
 
@@ -287,8 +285,6 @@ public:
     }
 
 
-    //---------------------------SOLVE METHOD-------------------------------
-
 
     void solve() {
         int np = nodes->size();
@@ -382,7 +378,7 @@ public:
 
 
 
-    double FEMobject::uexact(double x, double y){
+    double uexact(double x, double y){
 
         if(this->problemtype == "laplace") {
             double rho = sqrt((x * x) + (y * y));
@@ -401,7 +397,7 @@ public:
         return 0; //default value
     }
 
-    double FEMobject::getError(){
+    double getError(){
         double error = 0;
         list<Edge*>::iterator K;
         //auto nodelist = triang.getNodes();
@@ -426,50 +422,39 @@ public:
         return sqrt(error);
     }
 
-    int FEMobject::getDoFs(){
+    int getDoFs(){
 
        return this->triang.getNodes()->size(); // This is correct
     }
 
-
-
-
-
-
-
-
 };
-
-
 
 
 int main() {
 
-    int no_of_nodes =40;
-
-    Eigen::Vector2d Op(0, 0)  ;
-
+    int no_of_nodes =25;
+    Eigen::Vector2d Op(0, -0.5);
     FEMobject model;
 
-    model.problemtype = "laplace";
+    //model.problemtype = "laplace";
     //model.problemtype = "poisson";
-   // model.problemtype = "helmholtz";
+    model.problemtype = "helmholtz";
 
 
-    //model.SquareMesh(no_of_nodes, 1, Op );
-    model.CircleMesh(20, no_of_nodes, 1);
+    model.SquareMesh(no_of_nodes, 1, Op );
+    //model.CircleMesh(5, no_of_nodes, 1);
     model.solve();
 
 
-    //model.visualization("squarelaplace.obj");              //For Lappace
-    model.visualization("circlelaplace.obj");
+    //model.visualization("squarelaplace.obj");
+    //model.visualization("circlelaplace.obj");
 
 
-    //model.visualization("squarepoisson.obj");              //For Poisson
+    //model.visualization("squarepoisson.obj");
     //model.visualization("circlepoisson.obj");
 
 
-    //model.visualization("squarehelmholtz.obj");            // For helmholtz
+    model.visualization("squarehelmholtz.obj");
     //model.visualization("circlehelmholtz.obj");
 
 
@@ -494,18 +479,6 @@ int main() {
             std::cout << std::left << std::setw(15) << model.problemtype
                       << std::setw(15) << numDoFs
                       << std::setw(15) << std::setprecision(5) << error << std::endl;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

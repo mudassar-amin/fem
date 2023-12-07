@@ -1,0 +1,527 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"ei_add_test",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"cmake/EigenTesting.cmake",
+			"test/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 258,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 199,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 202,
+				"parent" : 1
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "bdcsvd_7::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "bdcsvd_6::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "bdcsvd_2::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "bdcsvd_1::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "bdcsvd_3::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "bdcsvd_4::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "bdcsvd_5::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "bdcsvd_15::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "bdcsvd_28::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 12,
+			"id" : "bdcsvd_30::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 13,
+			"id" : "bdcsvd_13::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "bdcsvd_34::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 15,
+			"id" : "bdcsvd_36::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 16,
+			"id" : "bdcsvd_33::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 17,
+			"id" : "bdcsvd_18::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "bdcsvd_19::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 19,
+			"id" : "bdcsvd_22::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 20,
+			"id" : "bdcsvd_11::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 21,
+			"id" : "bdcsvd_8::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 22,
+			"id" : "bdcsvd_21::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 23,
+			"id" : "bdcsvd_16::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 24,
+			"id" : "bdcsvd_23::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 25,
+			"id" : "bdcsvd_9::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 26,
+			"id" : "bdcsvd_17::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "bdcsvd_20::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 28,
+			"id" : "bdcsvd_14::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 29,
+			"id" : "bdcsvd_10::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 30,
+			"id" : "bdcsvd_12::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 31,
+			"id" : "bdcsvd_24::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 32,
+			"id" : "bdcsvd_25::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 33,
+			"id" : "bdcsvd_26::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 34,
+			"id" : "bdcsvd_27::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 35,
+			"id" : "bdcsvd_29::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 36,
+			"id" : "bdcsvd_31::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 37,
+			"id" : "bdcsvd_32::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 38,
+			"id" : "bdcsvd_35::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 39,
+			"id" : "bdcsvd_47::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 40,
+			"id" : "bdcsvd_46::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 41,
+			"id" : "bdcsvd_45::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 42,
+			"id" : "bdcsvd_48::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 43,
+			"id" : "bdcsvd_38::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 44,
+			"id" : "bdcsvd_43::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 45,
+			"id" : "bdcsvd_39::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 46,
+			"id" : "bdcsvd_37::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 47,
+			"id" : "bdcsvd_44::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 48,
+			"id" : "bdcsvd_41::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 49,
+			"id" : "bdcsvd_40::@36f028580bb02cc8272a"
+		},
+		{
+			"backtrace" : 50,
+			"id" : "bdcsvd_42::@36f028580bb02cc8272a"
+		}
+	],
+	"id" : "bdcsvd::@36f028580bb02cc8272a",
+	"name" : "bdcsvd",
+	"paths" : 
+	{
+		"build" : "test",
+		"source" : "test"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

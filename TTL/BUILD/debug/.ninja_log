@@ -1,8 +1,6 @@
 # ninja log v5
-4049	4844	7219266097024155	main.exe	2f8fedfdbcc39a91
+6466	9951	7223557402937841	main.exe	2f8fedfdbcc39a91
 654	757	7212313300633151	ttl.lib	a876644df99f4385
-16	4048	7219266093870013	CMakeFiles/main.dir/examples/hesimplest/main.cpp.obj	133a7f9d5b6eb2fa
+23	6465	7223557397432566	CMakeFiles/main.dir/examples/hesimplest/main.cpp.obj	133a7f9d5b6eb2fa
 4	654	7212313300114546	CMakeFiles/ttl.dir/src/halfedge/HeTriang.cpp.obj	4f3d7f38b2ab8af6
 8	625	7212313299635822	CMakeFiles/ttl.dir/src/utils/HandleId.cpp.obj	2b0cfeb5484a69a9
-14	4868	7219270042297558	CMakeFiles/main.dir/examples/hesimplest/main.cpp.obj	133a7f9d5b6eb2fa
-4868	5872	7219270045838032	main.exe	2f8fedfdbcc39a91
